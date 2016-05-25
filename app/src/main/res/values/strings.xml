@@ -4,4 +4,8 @@
     <string name="button_send">Send</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_display_message">Тест</string>
+    <string name="up">Вверх</string>
+    <string name="right">По часовой</string>
+    <string name="down">Вниз</string>
+    <string name="left">Против часовой</string>
 </resources>
