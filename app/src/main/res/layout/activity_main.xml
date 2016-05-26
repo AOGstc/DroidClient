@@ -1,64 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:columnCount="5"
-    android:rowCount="5"
-    android:useDefaultMargins="false">
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/left"
-        android:id="@+id/left"
-        android:layout_row="3"
-        android:layout_column="0" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_columnWeight="2"
-        android:editable="false"
-        android:elegantTextHeight="false"
-        android:enabled="false"
-        android:hint="@string/send_hint"
-        android:layout_columnSpan="2" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:enabled="true"
+            android:hint="@string/send_hint"
+            android:layout_weight="2" />
 
-    <Button
-        android:layout_width="wrap_content"
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:id="@+id/send"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/up"
-        android:id="@+id/up"
-        android:layout_row="2"
-        android:layout_column="1"
-        android:layout_columnWeight="1"
-        android:layout_gravity="fill" />
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="@dimen/side_button_weight"
+            android:layout_height="@dimen/side_button_height"
+            android:text="@string/up"
+            android:id="@+id/up" />
+    </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/right"
-        android:id="@+id/right"
-        android:layout_row="3"
-        android:layout_column="2" />
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="@dimen/side_button_weight"
+            android:layout_height="@dimen/side_button_height"
+            android:text="@string/left"
+            android:id="@+id/left"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
 
-    <Button
-        android:layout_width="wrap_content"
+        <Button
+            android:layout_width="@dimen/side_button_weight"
+            android:layout_height="@dimen/side_button_height"
+            android:text="@string/right"
+            android:id="@+id/right"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/down"
-        android:id="@+id/down"
-        android:layout_row="4"
-        android:layout_column="1" />
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="@dimen/side_button_weight"
+            android:layout_height="@dimen/side_button_height"
+            android:text="@string/down"
+            android:id="@+id/down" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send"
-        android:id="@+id/send"
-        android:layout_row="0"
-        android:layout_column="2" />
+    </LinearLayout>
 
-</GridLayout>
+</LinearLayout>
