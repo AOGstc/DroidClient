@@ -8,4 +8,6 @@
     <string name="right">По часовой</string>
     <string name="down">Вниз</string>
     <string name="left">Против часовой</string>
+    <string name="send">Отправить</string>
+    <string name="send_hint">Введите команду</string>
 </resources>
