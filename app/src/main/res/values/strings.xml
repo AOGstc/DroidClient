@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">ООО "СТЦ"</string>
-    <string name="edit_message">Enter a message</string>
+    <string name="edit_message">Введите команду</string>
     <string name="button_send">Send</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_display_message">Тест</string>
+    <string name="up">Вверх</string>
+    <string name="right">По часовой</string>
+    <string name="down">Вниз</string>
+    <string name="left">Против часовой</string>
+    <string name="send">Отправить</string>
+    <string name="send_hint">Введите команду</string>
 </resources>

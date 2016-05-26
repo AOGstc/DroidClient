@@ -7,16 +7,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="80dp"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal">
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/editText"
-            android:enabled="true"
+
+            android:enabled="false"
             android:hint="@string/send_hint"
             android:layout_weight="2" />
+
 
         <Button
             android:layout_width="0dp"
@@ -27,13 +27,13 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_gravity="center">
         <Button
-            android:layout_width="@dimen/side_button_weight"
-            android:layout_height="@dimen/side_button_height"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="@string/up"
             android:id="@+id/up" />
     </LinearLayout>
@@ -42,34 +42,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
-        <Button
-            android:layout_width="@dimen/side_button_weight"
-            android:layout_height="@dimen/side_button_height"
-            android:text="@string/left"
-            android:id="@+id/left"
-            android:layout_gravity="center"
-            android:layout_margin="10dp" />
+        android:layout_gravity="center">
 
         <Button
-            android:layout_width="@dimen/side_button_weight"
-            android:layout_height="@dimen/side_button_height"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/left"
+            android:id="@+id/left"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:text="@string/right"
             android:id="@+id/right"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
             android:layout_gravity="center" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_gravity="center">
+
         <Button
-            android:layout_width="@dimen/side_button_weight"
-            android:layout_height="@dimen/side_button_height"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:text="@string/down"
-            android:id="@+id/down" />
+            android:id="@+id/down"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
