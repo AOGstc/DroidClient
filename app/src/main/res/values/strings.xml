@@ -10,4 +10,7 @@
     <string name="left">Против часовой</string>
     <string name="send">Отправить</string>
     <string name="send_hint">Введите команду</string>
+    <string name="ip_hint">IP адрес</string>
+    <string name="port_hint">порт</string>
+    <string name="connect">подключиться</string>
 </resources>
