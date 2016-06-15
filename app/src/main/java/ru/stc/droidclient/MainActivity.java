@@ -8,14 +8,24 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-        public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
+    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
+
+    ClientTask clientTask;
+    EditText editText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        editText = (EditText) findViewById(R.id.editText);
+        clientTask = new ClientTask();
+        clientTask.execute();
     }
 
+    public void SendMsg(View v) {
+        clientTask.Client.Send(editText.getText().toString());
+    }
     /** Called when the user clicks the Send button */
 //    public void sendMessage(View view) {
 //        Intent intent = new Intent(this, DisplayMessageActivity.class);

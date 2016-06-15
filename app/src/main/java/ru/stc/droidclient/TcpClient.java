@@ -9,32 +9,27 @@ import java.io.BufferedReader;
         import java.net.UnknownHostException;
         import android.util.Log;
 
-public class TcpClient extends Thread{
+public class TcpClient {
+
+    Socket s;
+    BufferedReader in;
+    BufferedWriter out;
 
     private static final int TCP_SERVER_PORT = 6000;
 
     TcpClient() {
-        super("ClientThread");
-        System.out.println("Создан второй поток " + this);
-        start();
+        Connect();
     }
 
-    private void runTcpClient() {
+    private void Connect() {
         try {
             //TODO use InetAddress
-            Socket s = new Socket("localhost", TCP_SERVER_PORT);
-            BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
-            //send output msg
-            String outMsg = "TCP connecting to " + TCP_SERVER_PORT + System.getProperty("line.separator");
-            out.write(outMsg);
-            out.flush();
-            Log.i("TcpClient", "sent: " + outMsg);
-            //accept server response
-            String inMsg = in.readLine() + System.getProperty("line.separator");
-            Log.i("TcpClient", "received: " + inMsg);
-            //close connection
-            s.close();
+            s = new Socket("skiftwr", TCP_SERVER_PORT);
+            if (s != null) {
+                Log.i("MSG", "Socket opened");
+            }
+            in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+            out = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -42,12 +37,35 @@ public class TcpClient extends Thread{
         }
     }
 
-    public void run() {
+    public String Recieve() {
         try {
-            while(true) {
-                runTcpClient();
-
-        System.out.println("Второй поток завершён");
+            String res = "";
+            if (in != null)
+                res = in.readLine() + System.getProperty("line.separator");
+            return res;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
+    public void Send(String msg) {
+        try {
+            out.write(msg);
+            out.flush();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void Close() {
+        try {
+            s.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

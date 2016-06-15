@@ -22,6 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/send"
+            android:onClick="SendMsg"
             android:id="@+id/send"
             android:layout_weight="1" />
     </LinearLayout>
