@@ -17,14 +17,17 @@ public class TcpClient {
 
     private static final int TCP_SERVER_PORT = 6000;
 
-    TcpClient() {
-        Connect();
+    TcpClient(String addr, int port) {
+        Connect(addr, port);
     }
 
-    private void Connect() {
+    public void Connect(String addr, int port) {
         try {
-            //TODO use InetAddress
-            s = new Socket("skiftwr", TCP_SERVER_PORT);
+            /* close previous socket */
+            if (s != null)
+                s.close();
+            /* open new socket */
+            s = new Socket(addr, port);
             if (s != null) {
                 Log.i("MSG", "Socket opened");
             }
@@ -39,7 +42,7 @@ public class TcpClient {
 
     public String Recieve() {
         try {
-            String res = "";
+            String res = null;
             if (in != null)
                 res = in.readLine() + System.getProperty("line.separator");
             return res;
@@ -50,7 +53,7 @@ public class TcpClient {
         }
     }
 
-    public void Send(String msg) {
+    public synchronized void Send(String msg) {
         try {
             out.write(msg);
             out.flush();

@@ -31,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/connect"
-            android:onClick="SendMsg"
+            android:onClick="Connect"
             android:id="@+id/button"
             android:layout_weight="3" />
     </LinearLayout>
@@ -113,6 +113,11 @@
             android:layout_height="match_parent"
             android:id="@+id/rxMsg"
             android:enabled="false"
-            android:background="@color/colorRxMsg" />
+            android:background="@color/colorRxMsg"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:singleLine="true"
+            android:selectAllOnFocus="false" />
     </LinearLayout>
 </LinearLayout>

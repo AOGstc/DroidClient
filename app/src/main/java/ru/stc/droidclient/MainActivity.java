@@ -19,12 +19,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         editText = (EditText) findViewById(R.id.editText);
-        clientTask = new ClientTask();
-        clientTask.execute();
     }
 
     public void SendMsg(View v) {
         clientTask.Client.Send(editText.getText().toString());
+    }
+
+    public void Connect(View v) {
+        EditText ip = (EditText) findViewById(R.id.ip);
+        EditText port = (EditText) findViewById(R.id.port);
+        clientTask = new ClientTask(this);
+        clientTask.execute(ip.getText().toString(), port.getText().toString());
     }
     /** Called when the user clicks the Send button */
 //    public void sendMessage(View view) {
